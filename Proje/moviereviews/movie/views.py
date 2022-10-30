@@ -3,9 +3,19 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'index.html', {"name":"Murat"})
+    return render(request, 'index.html', {"name":"home"})
+
 def about(request):
-    return HttpResponse("<h1>Welcome to About Page</h1>")
+    return render(request, 'about.html', {"name":"about"})
+
+def classes(request):
+    return render(request, 'classes.html', {"name":"classes"})
+
+def contact(request):
+    return render(request, 'contact.html', {"name":"contact"})
+
+def schedule(request):
+    return render(request, 'schedule.html', {"name":"schedule"})
 
 def signup(request):
     email = request.GET.get('email')
