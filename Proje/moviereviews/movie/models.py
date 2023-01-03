@@ -77,4 +77,4 @@ class Class(models.Model):
     Trainer_name = models.ForeignKey(Trainer, null = True, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.Class_name
+        return self.Class_namefbd2af286a64beb97923
