@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<section class="section" id="contact-us">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div id="map">
+                  <iframe src="https://maps.google.com/maps?width=&amp;height=&amp;hl=en&amp;q=%C4%B0stanbul%20Kartal%20Mehmet%20Gen%C3%A7%20K%C3%BClliyesi=&output=embed" width="100%" height="600px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="contact-form">
+                    <form id="contact" action="." method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit"class="btn btn-primary">
+                            submit
+                        </button>
+                        {% if messages%}
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

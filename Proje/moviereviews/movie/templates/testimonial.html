@@ -12,60 +12,25 @@
             </div>
         </div>
         <div class="row">
+            {% for Trainer in Trainers %}
             <div class="col-lg-4">
                 <div class="trainer-item">
                     <div class="image-thumb">
-                        <img src="{% static 'images/first-trainer.jpg' %}" alt="">
+                        <img src={{Trainer.Trainer_img.url}} alt="">
                     </div>
                     <div class="down-content">
-                        <span>Strength Trainer</span>
-                        <h4>Bret D. Bowers</h4>
-                        <p>Bitters cliche tattooed 8-bit distillery mustache. Keytar succulents gluten-free vegan church-key pour-over seitan flannel.</p>
+                        <span>{{Trainer.Trainer_type}}</span>
+                        <h4>{{Trainer.Trainer_name}} {{Trainer.Trainer_lastname}}</h4>
+                        <p>{{Trainer.Trainer_desc}}</p>
                         <ul class="social-icons">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                            <li><a href="{{Trainer.Trainer_fb}}"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="{{Trainer.Trainer_tw}}"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="{{Trainer.Trainer_ln}}"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
                     </div>
-                </div>
+                </div>  
             </div>
-            <div class="col-lg-4">
-                <div class="trainer-item">
-                    <div class="image-thumb">
-                        <img src="{% static 'images/second-trainer.jpg' %}" alt="">
-                    </div>
-                    <div class="down-content">
-                        <span>Muscle Trainer</span>
-                        <h4>Hector T. Daigl</h4>
-                        <p>Bitters cliche tattooed 8-bit distillery mustache. Keytar succulents gluten-free vegan church-key pour-over seitan flannel.</p>
-                        <ul class="social-icons">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="trainer-item">
-                    <div class="image-thumb">
-                        <img src="{% static 'images/third-trainer.jpg' %}" alt="">
-                    </div>
-                    <div class="down-content">
-                        <span>Power Trainer</span>
-                        <h4>Paul D. Newman</h4>
-                        <p>Bitters cliche tattooed 8-bit distillery mustache. Keytar succulents gluten-free vegan church-key pour-over seitan flannel.</p>
-                        <ul class="social-icons">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            {%endfor%}
         </div>
     </div>
 </section>

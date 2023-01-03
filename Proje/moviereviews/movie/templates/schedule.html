@@ -17,52 +17,29 @@
             <div class="col-lg-12">
                 <div class="filters">
                     <ul class="schedule-filter">
-                        <li class="active" data-tsfilter="monday">Monday</li>
-                        <li data-tsfilter="tuesday">Tuesday</li>
-                        <li data-tsfilter="wednesday">Wednesday</li>
-                        <li data-tsfilter="thursday">Thursday</li>
-                        <li data-tsfilter="friday">Friday</li>
+                        <li data-tsfilter="0">Monday</li>
+                        <li data-tsfilter="1">Tuesday</li>
+                        <li data-tsfilter="2">Wednesday</li>
+                        <li data-tsfilter="3">Thursday</li>
+                        <li data-tsfilter="4">Friday</li>
                     </ul>
                 </div>
             </div>
+            {%for Class in Classes %}
             <div class="col-lg-10 offset-lg-1">
                 <div class="schedule-table filtering">
                     <table>
                         <tbody>
                             <tr>
-                                <td class="day-time">Fitness Class</td>
-                                <td class="monday ts-item show" data-tsmeta="monday">10:00AM - 11:30AM</td>
-                                <td class="tuesday ts-item" data-tsmeta="tuesday">2:00PM - 3:30PM</td>
-                                <td>William G. Stewart</td>
-                            </tr>
-                            <tr>
-                                <td class="day-time">Muscle Training</td>
-                                <td class="friday ts-item" data-tsmeta="friday">10:00AM - 11:30AM</td>
-                                <td class="thursday friday ts-item" data-tsmeta="thursday" data-tsmeta="friday">2:00PM - 3:30PM</td>
-                                <td>Paul D. Newman</td>
-                            </tr>
-                            <tr>
-                                <td class="day-time">Body Building</td>
-                                <td class="tuesday ts-item" data-tsmeta="tuesday">10:00AM - 11:30AM</td>
-                                <td class="monday ts-item show" data-tsmeta="monday">2:00PM - 3:30PM</td>
-                                <td>Boyd C. Harris</td>
-                            </tr>
-                            <tr>
-                                <td class="day-time">Yoga Training Class</td>
-                                <td class="wednesday ts-item" data-tsmeta="wednesday">10:00AM - 11:30AM</td>
-                                <td class="friday ts-item" data-tsmeta="friday">2:00PM - 3:30PM</td>
-                                <td>Hector T. Daigle</td>
-                            </tr>
-                            <tr>
-                                <td class="day-time">Advanced Training</td>
-                                <td class="thursday ts-item" data-tsmeta="thursday">10:00AM - 11:30AM</td>
-                                <td class="wednesday ts-item" data-tsmeta="wednesday">2:00PM - 3:30PM</td>
-                                <td>Bret D. Bowers</td>
+                                <td class="day-time">{{Class.Class_name}}</td>
+                                <td class="{{Class.Class_dayOfTheWeek}} ts-item"  data-tsmeta="{{Class.Class_dayOfTheWeek}}">{{Class.Class_finishingtime}} - {{Class.Class_beginningtime}}</td>
+                                <td>Trainer {{Class.Trainer_name}}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+            {%endfor%}
         </div>
     </div>
 </section>
