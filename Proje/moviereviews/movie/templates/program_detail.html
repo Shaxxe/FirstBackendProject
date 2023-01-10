@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="container text-center">
+    <ul class="features-items">
+        <li class="feature-item">
+            <div class="row">
+                <img src="{{object.Program_img.url}}" width="1200px" height="600px" alt="First One">
+            </div>
+            <div class="container text-center">
+                <h2>{{object.Program_title}}</h2>
+                <br>
+                <h6>Programın Ana Amacı : {{object.Program_description}}</h6>
+                <br>
+                <p>{{object.Program_about}} </p>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="container">
+    <div class="text-left">
+        <p><strong><em>{{object.Trainer_id}} {{object.Trainer_id.Trainer_lastname}}</em></strong></p>
+    </div>
+</div>
+{% endblock %}

@@ -18,7 +18,8 @@ urlpatterns = [
     path('signupaccount/', accountsViews.signupaccount,name='signupaccount'),
     path('logout/', accountsViews.logoutaccount,name='logoutaccount'),
     path('login/', accountsViews.loginaccount,name='loginaccount'),
-   path('programs/', movieViews.programs, name='programs'),
+    path('program/<int:pk>/', movieViews.MyModelDetailView.as_view(),name='program_detail'),
+
     
 ]
 

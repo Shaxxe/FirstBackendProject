@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Uyelik
 from .models import Program
 from .models import Trainer
 from .models import Class
+from django.views.generic import DetailView
 
 
 def index(request):
@@ -30,6 +31,16 @@ def signup(request):
     email = request.GET.get('email')
     return render(request, 'signup.html', {'email':email, 'Trainers':Trainers})
 
-def programs(request):
+
+
+
+class MyModelDetailView(DetailView):   
+    quaryset = Program.objects.all()
+    template_name = 'program_detail.html' 
     Programs = Program.objects.all()
-    return render(request, 'programs.html', {"name":"program", 'Programs':Programs})
+    Trainers = Trainer.objects.all()
+    
+    def get_object(self):
+        id_ = self.kwargs.get("pk")
+        return get_object_or_404(Program, Program_id=id_)
+

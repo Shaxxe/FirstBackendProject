@@ -25,7 +25,7 @@
                             <div class="right-content">
                                 <h4>{{Program.Program_title}}</h4>
                                 <p>{{Program.Program_description}}</p>
-                                <a href="#" class="text-button">Discover More</a>
+                                <a href="{% url 'program_detail' Program.Program_id %}" class="text-button">Discover More</a>
                             </div>
                         </li>
                     </ul>

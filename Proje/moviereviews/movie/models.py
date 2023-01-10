@@ -1,5 +1,6 @@
 from django.db import models
-
+from django.contrib.auth.models import User
+from django.views.generic import DetailView
 
 DAYS_OF_WEEK = (
     (0, 'Monday'),
@@ -59,6 +60,8 @@ class Program(models.Model):
     Program_id = models.IntegerField(primary_key = True)
     Program_title = models.CharField(max_length=100)
     Program_description = models.CharField(max_length=50)
+    Program_about = models.CharField(max_length=5000)
+    Program_img = models.ImageField(upload_to='movie/static/images')
     Trainer_id = models.ForeignKey(Trainer,on_delete=models.CASCADE, null = True)
 
     def __str__(self):
@@ -77,4 +80,8 @@ class Class(models.Model):
     Trainer_name = models.ForeignKey(Trainer, null = True, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.Class_namefbd2af286a64beb97923
+        return self.Class_name
+
+
+class MyModelDetailView(DetailView):
+    model = Program
